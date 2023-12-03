@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive E-commerce Website</title>
+    <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- header section design -->
+    <header>
+        {% comment %} <a href="#" class="logo"><img src="img/logo.png" alt="Logo"></a> {% endcomment %}
+        <ul class="navbar">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#" class="active">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        
+        <div class="icons">
+            <a href="#"><i class="ri-search-line"></i></a>
+            <a href="#"><i class="ri-user-line"></i></a>
+            <a href="#"><i class="ri-shopping-cart-line"></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+    </header>
+
+    <!-- home section design -->
+    <section class="home">
+        <div class="home-text">
+            <h4>Check what's on your blog!!</h4>
+            <h1>Explore latest news about fashion</h1>
+            <a href="#" class="btn">Explore now</a>
+        </div>
+        <div class="home-img"><img src="https://img.freepik.com/free-photo/romantic-female-skateboarder-trendy-glasses-posing-photo-fashionable-white-girl-with-purple-longboard-isolated_197531-20464.jpg?w=900&t=st=1701521296~exp=1701521896~hmac=9b37022483edc1dd4f0774af4befefac3a6a17adb82a30168acafea126033a76" alt="Home Image"></div>
+    </section>
+
+    <!-- feature section design -->
+    <section>
+        <div class="middle-text">
+            <h2>Discover more <span>Latest News.</span></h2>
+        </div>
+</section>
+    <section class="blog-container">
+        
+        <div class="blog" id="blog1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange</p>
+        </div>
+        <div class="blog" id="blog2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange</p>
+        </div>
+        <div class="blog" id="blog3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange</p>
+        </div>
+    </section>
+    
+    <!-- custom js link -->
+    <script type="text/javascript" src="{% static 'interface/scripts.js'%}"></script>
+</body>
+</html>
