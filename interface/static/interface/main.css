@@ -420,9 +420,9 @@ Primary use:
 }
 
 #bg1a {
-  background:  url("../interface/images/bg01.png");
+  background-image:  url("../interface/images/bg01.png");
 }
 
 #bg1b {
-  background:  url("../interface/images/bg02.png");
+  background-image:  url("../interface/images/bg02.png");
 }
