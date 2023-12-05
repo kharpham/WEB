@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9f37df40-349b-491e-b0c1-5e535494e176/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/brownish-clothing-store",
+    "appService.deploySubpath": "."
+}
