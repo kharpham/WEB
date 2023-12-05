@@ -15,6 +15,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     creator = models.CharField(max_length=50)
     content = models.TextField()
+    image = models.ImageField(null=True, upload_to="images/")
 
     
     
