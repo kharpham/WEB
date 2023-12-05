@@ -41,7 +41,7 @@
             <h1>Explore latest news about fashion</h1>
             <a href="#" class="btn">Explore now</a>
         </div>
-        <div class="home-img"><img src="https://img.freepik.com/free-photo/romantic-female-skateboarder-trendy-glasses-posing-photo-fashionable-white-girl-with-purple-longboard-isolated_197531-20464.jpg?w=900&t=st=1701521296~exp=1701521896~hmac=9b37022483edc1dd4f0774af4befefac3a6a17adb82a30168acafea126033a76" alt="Home Image"></div>
+        <div class="home-img"><img src="{% static 'interface/images/home_image.png' %}" alt="Home Image"></div>
     </section>
 
     <!-- feature section design -->
@@ -49,21 +49,19 @@
         <div class="middle-text">
             <h2>Discover more <span>Latest News.</span></h2>
         </div>
-</section>
+    </section>
     <section class="blog-container">
+        {% for blog in blogs %}
         
-        <div class="blog" id="blog1">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange</p>
-        </div>
-        <div class="blog" id="blog2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange</p>
-        </div>
-        <div class="blog" id="blog3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchange</p>
-        </div>
+          <div class="block">
+            <div>
+                <img src="{{ blog.image.url}}">
+                <p class="timestamp">{{blog.timestamp}}</p>
+                <p class="title">{{blog.title}}</p>
+            </div>
+          </div>
+        
+        {% endfor %}
     </section>
     {% comment %} <img src="{% static 'interface/images/logo.png' %}"> {% endcomment %}
     {% comment %} <img src="../images/logo.png"> {% endcomment %}

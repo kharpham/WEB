@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from datetime import datetime, timedelta
 from pytz import timezone
+from .models import *
 # Create your views here.
 def index(request):
     now = datetime.now(timezone('Asia/Ho_Chi_Minh'))
@@ -10,5 +11,10 @@ def index(request):
     else:
         return render(request,  "interface/commerce.html")
 def blog(request):
-    return render(request, "interface/blog.html")
+    blogs = Blog.objects.all()
+    return render(request, "interface/blog.html", {
+      "blogs": blogs,
+    })
 
+def countdown(request):
+    return render(request, "interface/countdown.html")
