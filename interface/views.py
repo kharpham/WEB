@@ -6,7 +6,7 @@ from .models import *
 def index(request):
     now = datetime.now(timezone('Asia/Ho_Chi_Minh'))
     target_datetime = datetime(2023, 12, 5, 20, 0, 0, tzinfo=timezone('Asia/Ho_Chi_Minh'))
-    if target_datetime < now:
+    if target_datetime > now:
         return render(request, "interface/countdown.html")
     else:
         return render(request,  "interface/commerce.html")
