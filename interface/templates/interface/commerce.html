@@ -91,15 +91,16 @@
         </div>
 
         <div class="product-content">
+            {% for product in products %}
             <div class="box">
                 <div class="box-img">
-                    <img src="data:image/jpeg;base64,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" alt="">
+                    <img src="{{product.image_url}}" alt="">
                 </div>
-                <h3>CS50 Shirt</h3>
+                <h3>{{product.name}}</h3>
                 <h4>New Design 2023</h4>
                 <div class="inbox">
                     <div>
-                        <a href="#" class="price">$50.00</a>
+                        <a href="#" class="price">{{product.price}}VND</a>
                     </div>
                     <div class="rating">
                         <a href="#"><i class="ri-star-fill"></i></a>
@@ -114,75 +115,8 @@
                     </div>
                 </div>
             </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOSUWJD8sT3sJSpMZ7HIhQfBpcAFZqgsWANQ&usqp=CAU" alt="">
-                </div>
-                <h3>CS50 Shirt</h3>
-                <h4>New Design 2023</h4>
-                <div class="inbox">
-                    <div>
-                        <a href="#" class="price">$50.00</a>
-                    </div>
-                    <div class="rating">
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                    </div>
-
-                    <div class="heart">
-                        <i class="ri-heart-line"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="https://uniworthdress.com/uploads/product/CS2192..jpg" alt="">
-                </div>
-                <h3>CS50 Shirt</h3>
-                <h4>New Design 2023</h4>
-                <div class="inbox">
-                    <div>
-                        <a href="#" class="price">$50.00</a>
-                    </div>
-                    <div class="rating">
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                    </div>
-
-                    <div class="heart">
-                        <i class="ri-heart-line"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8xU-R_9o-sbp_j7WMkHHAXH0ABv5gC0YkYQ&usqp=CAU" alt="">
-                </div>
-                <h3>CS50 Shirt</h3>
-                <h4>New Design 2023</h4>
-                <div class="inbox">
-                    <div>
-                        <a href="#" class="price">$50.00</a>
-                    </div>
-                    <div class="rating">
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                    </div>
-
-                    <div class="heart">
-                        <i class="ri-heart-line"></i>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            
         </div>
     </section>
     <!-- custom js link -->
