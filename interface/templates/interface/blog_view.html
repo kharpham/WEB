@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownish: Blogs</title>
+    <title>Brownish: View Blog</title>
     <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -37,12 +37,10 @@
     </header>
 
     <!-- home section design -->
-    <section class="home">
-        <div class="home-img"><img src="{% static 'interface/images/home_image.png' %}" alt="Home Image"></div>
+    <section class="viewblog">
+        <div class="blog-img"><img src={{blog.image.url}} alt="Home Image"></div>
         <div class="home-text">
-            <h4>Check what's on your blog!!</h4>
-            <h1>Explore latest news about fashion</h1>
-            <a href="#" class="btn">Explore now</a>
+            
         </div>
     </section>
 

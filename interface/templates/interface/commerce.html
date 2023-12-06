@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive E-commerce Website</title>
+    <title>Brownish</title>
     <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -16,7 +16,7 @@
     <!-- header section design -->
     <header>
         {% comment %} <a href="#" class="logo"><img src="img/logo.png" alt="Logo"></a> {% endcomment %}
-        <img src="{% static 'interface/images/logo.png' %}" class="logo" alt="">
+        <a href="{% url 'index'%}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt="">
         <ul class="navbar">
             
             <li><a href="#" class="active">Home</a></li>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from datetime import datetime, timedelta
 from pytz import timezone
+from django.http import HttpResponse
 from .models import *
 # Create your views here.
 def index(request):
@@ -21,3 +22,12 @@ def blog(request):
 
 def countdown(request):
     return render(request, "interface/countdown.html")
+
+def blog_view(request, block_id):
+    try: 
+        blog = Blog.objects.get(pk=block_id)
+    except Blog.DoesNotExist:
+        return HttpResponse("Page not found")
+    return render(request, "interface/blog_view.html", {
+        "blog": blog,
+    })

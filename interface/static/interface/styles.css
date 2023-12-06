@@ -45,6 +45,10 @@ header {
     display: flex;
 }
 
+.block a {
+    font-size: var(--p-font);
+    color: var(--other-color);
+}
 .navbar a {
     font-size: var(--p-font);
     color: var(--other-color);
@@ -102,7 +106,7 @@ section {
 .home {
     height: 100vh;
     width: 100%;
-    background-color: #ffe1cc;
+    background-color: #dbc1af;
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -113,10 +117,10 @@ section {
 .home img {
     width: 100%;
     height: auto;
-    background-color: pink;
 }
 .home-text {
     background-color: springgreen;
+    border-radius: 10px;
 }
 .home-text h4 {
     font-size: 22px;
@@ -168,8 +172,8 @@ section {
 }
 
 header.sticky {
-    background: var(--bg-color);
-    padding: 2px 11%;
+    background: burlywood;
+    padding: 2px 6%;
 }
 
 .middle-text h2 {
@@ -302,8 +306,8 @@ header.sticky {
     display: inline-block;
     padding: 4px 16px;
     background: transparent;
-    border: 2px solid #ef4444;
-    color: #ef4444;
+    border: 2px solid #853f16;
+    color: #853f16;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
@@ -380,12 +384,11 @@ header.sticky {
     row-gap: 100px;
 }
 
-.blog-container img {
-    width: 300px;
+.block img {
+    width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 10px;    
-    border: 0.1px outset #334155;
 }
 .timestamp {
     font-size: 14px;
@@ -394,22 +397,30 @@ header.sticky {
     font-style: italic;
 }
 .title {
-    font-size: 22px;
+    font-size: 18px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
+    text-align: justify;
+    height: 52px;
+    overflow: ellipsis; 
 }
 .block {
-  padding: 60px 10px 40px;
+  padding: 0 10px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f9f9f9;
+  background: linear-gradient( #f9f9f9, #eaeef3); 
   border-radius: 20px;
 }
 .block div {
-    width: 80%;
+    width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+.block:hover {
+    transform: scale(1.03);
+    position: relative;
+    transition: all .45s ease;
 }
 .logo {
     width: 200px;
