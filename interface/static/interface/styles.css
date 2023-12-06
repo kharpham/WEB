@@ -241,11 +241,16 @@ header.sticky {
 
 .box {
     position: relative;
+    overflow-y: hidden;
+    height: 440px;
+    padding: 0 5px;
+    
 }
 
 .box-img img {
-    height: 200px;
-    width: auto;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
     max-width: 100%;
     border-radius: 20px;
     margin-bottom: 1.2rem;
@@ -264,13 +269,24 @@ header.sticky {
     font-weight: 600;
     margin-bottom: 10px;
     line-height: 1.1;
-}
+    height: 2.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    
+}   
 
 .box h4 {
     font-size: var(--p-font);
     color: var(--other-color);
     font-weight: 500;
     margin-bottom: 2rem;
+    height: 2.8em;
+    line-height: 1.4em;
+    overflow: hidden;
+    /* overflow: ellipsis; */
+    max-width: 100%;
+    
 }
 
 .inbox {
@@ -279,6 +295,7 @@ header.sticky {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+
 }
 
 .price {
@@ -294,7 +311,7 @@ header.sticky {
 }
 
 .price:hover {
-    letter-spacing: 1px;
+    transform: scale(1.05);
 }
 
 .rating i {
@@ -377,8 +394,9 @@ header.sticky {
     font-style: italic;
 }
 .title {
-    font-size: 18px;
+    font-size: 22px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
 }
 .block {
   padding: 60px 10px 40px;
