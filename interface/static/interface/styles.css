@@ -30,10 +30,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background: #d87d48; */
     background: transparent;
     padding: 2px 5% 0px;
     border-bottom: 1px solid #f7f9fb;
     transition: all .45s ease;
+    height: 100px;
 }
 
 .logo img {
@@ -52,7 +54,7 @@ header {
 .navbar a {
     font-size: var(--p-font);
     color: var(--other-color);
-    font-weight: 400;
+    font-weight: 800;
     padding: 10px 25px;
     margin: 0 5px;
     background: transparent;
@@ -100,7 +102,7 @@ header {
 }
 
 section {
-    padding: 0px 11% 40px;
+    padding: 40px 11%;
 }
 
 .home {
@@ -108,21 +110,49 @@ section {
     width: 100%;
     background-color: #dbc1af;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
     gap: 1.5rem;
-
+    display: flex;
+    align-items: center;
 }
-.home img {
+.home-index {
+    height: 100vh;
     width: 100%;
-    height: auto;
+    background-color: #dbc1af;
+    position: relative;
+    gap: 1.5rem;
+    display: grid;
+    align-items:flex-end;
+}
+
+.home-index img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100% ;
+    border-radius: 15px;
 }
 .home-text {
     background-color: springgreen;
     border-radius: 10px;
+    width: 60%;
+    padding: 30px;
+    height: 350px;
 }
-.home-text h4 {
+.home-img img {
+    padding-top: 30px;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+
+}
+.home-text img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+   
+} */
+/* .home-text h4 {
     font-size: 22px;
     font-weight: 500;
     color: var(--other-color);
@@ -193,6 +223,7 @@ header.sticky {
     margin-top: 5rem;
 }
 
+
 .row-text h6 {
     font-size: 13px;
     font-weight: 200;
@@ -237,8 +268,8 @@ header.sticky {
 
 .product-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
     align-items: center;
     margin-top: 5rem;
 }
@@ -246,13 +277,13 @@ header.sticky {
 .box {
     position: relative;
     overflow-y: hidden;
-    height: 440px;
+    height: 480px;
     padding: 0 5px;
     
 }
 
 .box-img img {
-    height: 250px;
+    height: 300px;
     width: 100%;
     object-fit: cover;
     max-width: 100%;
@@ -298,13 +329,12 @@ header.sticky {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-
+    gap: 2rem;  
 }
 
 .price {
     display: inline-block;
-    padding: 4px 16px;
+    padding: 4px 15px;
     background: transparent;
     border: 2px solid #853f16;
     color: #853f16;
@@ -325,14 +355,10 @@ header.sticky {
 }
 
 .heart {
-    position: absolute;
+    transform: translateY(10px);
     height: 42px;
     width: 42px;
-    display: inline-flex;
-    margin: 15px;
-    transform: translateY(-18px);
-    color: red;
-
+    color: #853f16;
 }
 /* .blog-container {
     display: flex;
@@ -426,4 +452,45 @@ header.sticky {
     width: 200px;
     height: auto;
 
+}
+
+.view_product_img {
+    height: 450px;
+}
+.view_product_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.view_product_info {
+    border: 2px solid rgb(213, 181, 169);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+.view_product_info h3 {
+    font-size: 30px;
+}
+
+.view_product_info button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    position: absolute;
+    bottom: 150px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.view_product {
+    padding-top: 150px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 10%;
+    height: 80vh;
 }

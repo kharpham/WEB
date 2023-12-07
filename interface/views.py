@@ -31,3 +31,12 @@ def blog_view(request, block_id):
     return render(request, "interface/blog_view.html", {
         "blog": blog,
     })
+
+def product_view(request, product_id):
+    try:
+        product = Product.objects.get(pk=product_id)
+    except Product.DoesNotExist:
+        return HttpResponse("Page not found")
+    return render(request, "interface/product_view.html", {
+        "product": product,
+    })

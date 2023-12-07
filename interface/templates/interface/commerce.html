@@ -15,10 +15,8 @@
 <body>
     <!-- header section design -->
     <header>
-        {% comment %} <a href="#" class="logo"><img src="img/logo.png" alt="Logo"></a> {% endcomment %}
-        <a href="{% url 'index'%}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt="">
+        <a href="{% url 'index' %}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt=""></a>
         <ul class="navbar">
-            
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Shop</a></li>
@@ -31,19 +29,15 @@
             <a href="#"><i class="ri-search-line"></i></a>
             <a href="#"><i class="ri-user-line"></i></a>
             <a href="#"><i class="ri-shopping-cart-line"></i></a>
-            <div class="bx bx-menu" id="menu-icon"></div>
+            {% comment %} <div class="bx bx-menu" id="menu-icon"></div> {% endcomment %}
         </div>
 
     </header>
 
     <!-- home section design -->
-    <section class="home">
-        <div class="home-text">
-            <h4>In this season, find the best deal!!</h4>
-            <h1>Exclusive collection for everyone </h1>
-            <a href="#" class="btn">Explore now</a>
-        </div>
-        <div class="home-img"><img src="{% static 'interface/images/home_image.png' %}" alt="Home Image"></div>
+    <section class="home-index">
+        <img class="slide" src="{% static 'interface/images/bg01.png' %}">
+        {% comment %} <img class="slide" src="{%static 'interface/images/bg02.png' %}"> {% endcomment %}
     </section>
 
     <!-- feature section design -->
@@ -98,21 +92,13 @@
                 <div class="box-img">
                     <img src="{{product.image_url}}" alt="">
                 </div>
-                <h3>{{product.name}}</h3>
+                <a href="{% url 'product_view' product.pk %}"><h3>{{product.name}}</h3></a>
                 <h4>{{product.description}}</h4>
                 <div class="inbox">
                     <div>
                         <a href="#" class="price">{{product.price}}VND</a>
                     </div>
-                    <div class="rating">
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                        <a href="#"><i class="ri-star-fill"></i></a>
-                    </div>
-
-                    <div class="heart">
+                <div class="heart">
                         <i class="ri-heart-line"></i>
                     </div>
                 </div>
