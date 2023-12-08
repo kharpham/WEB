@@ -23,9 +23,9 @@ def blog(request):
 def countdown(request):
     return render(request, "interface/countdown.html")
 
-def blog_view(request, block_id):
+def blog_view(request, blog_id):
     try: 
-        blog = Blog.objects.get(pk=block_id)
+        blog = Blog.objects.get(pk=blog_id)
     except Blog.DoesNotExist:
         return HttpResponse("Page not found")
     return render(request, "interface/blog_view.html", {

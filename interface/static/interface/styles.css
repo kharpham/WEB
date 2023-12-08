@@ -377,11 +377,11 @@ header.sticky {
 
 }
 
-.viewblog {
+/* .viewblog {
     height: max-content;
     width: auto;
     margin-top: 100px;
-}
+} */
 
 
 /* .blog-container {
@@ -501,4 +501,36 @@ header.sticky {
     grid-template-columns: 2fr 3fr;
     column-gap: 10%;
     height: 80vh;
+}
+.viewblog {
+    width: 100%;
+    /* background-color: springgreen; */
+    position: static;
+}
+.viewblog-img {
+    width: 50%;
+    margin: 0px auto;
+}
+.viewblog-img img {
+    /* background-color: #853f16; */
+    margin-bottom: 30px;
+}
+.viewblog-info p, .viewblog-info h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.viewblog-info h3 {
+    font-size: 25px;
+}
+.viewblog-timestamp {
+    font-style: italic;
+    font-size: 16px;
+}
+.viewblog-creator {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.viewblog-content {
+    font-size: 16px;
+    padding-top: 30px;
 }

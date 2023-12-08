@@ -40,7 +40,7 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Shop</a></li>
             <li><a href="#">Pages</a></li>
-            <li><a href="#" class="active">Blog</a></li>
+            <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
         
@@ -59,10 +59,14 @@
     </section>
 
     <section class="viewblog">
-        <div class="blog-img"><img src={{blog.image.url}} alt="Home Image"></div>
-        <div class="blog-info">
+        <div class="viewblog-img"><img src="{{blog.image.url}}" alt="Home Image"></div>
+        <div class="viewblog-info">
             <h3>{{blog.title}}</h3>
-        </div>
+            <p class="viewblog-timestamp">{{blog.timestamp}}</p>
+            <p class="viewblog-creator">By: {{blog.creator}}</p>
+            <p class="viewblog-descripttion">{{blog.descirptiton}}</p>
+            <p class="viewblog-content">{{blog.content}}</p>            
+        </div>  
     </section>
 
     <!-- feature section design -->
