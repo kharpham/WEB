@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     list-style: none;
 }
@@ -60,6 +60,7 @@ header {
     background: transparent;
     border-radius: 30px;
     transition: all .45s ease;
+    font-size: 18px;
 }
 
 .navbar a:hover {
@@ -533,4 +534,5 @@ header.sticky {
 .viewblog-content {
     font-size: 16px;
     padding-top: 30px;
+    text-align: justify;
 }

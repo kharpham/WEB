@@ -1,42 +1,10 @@
+{% extends "interface/layout.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownish: Blogs</title>
-    <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- header section design -->
-    <header>
-        
-        <a href="{% url 'index' %}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt=""></a>
-        {% comment %} <a href="#" class="logo"><img src="img/logo.png" alt="Logo"></a> {% endcomment %}
-        <ul class="navbar">
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#" class="active">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        
-        <div class="icons">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="#"><i class="ri-user-line"></i></a>
-            <a href="#"><i class="ri-shopping-cart-line"></i></a>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
 
-    </header>
-
+{% block title %}Brownish: Blogs{% endblock %}
     <!-- home section design -->
+{% block body %}
+    <div id="page-type" style="display:none">blog</div>
     <section class="home">
         <div class="home-img"><img src="{% static 'interface/images/home_image.png' %}" alt="Home Image"></div>
         <div class="home-text">
@@ -65,10 +33,4 @@
         
         {% endfor %}
     </section>
-    {% comment %} <img src="{% static 'interface/images/logo.png' %}"> {% endcomment %}
-    {% comment %} <img src="../images/logo.png"> {% endcomment %}
-    
-    <!-- custom js link -->
-    <script type="text/javascript" src="{% static 'interface/scripts.js'%}"></script>
-</body>
-</html>
+{% endblock %}

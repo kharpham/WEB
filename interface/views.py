@@ -40,3 +40,6 @@ def product_view(request, product_id):
     return render(request, "interface/product_view.html", {
         "product": product,
     })
+
+def about_us(request):
+    return render(request, "interface/about_us.html")

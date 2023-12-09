@@ -1,39 +1,11 @@
+{% extends "interface/layout.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownish: View Product</title>
-    <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- header section design -->
-    <header>
-        <a href="{% url 'index' %}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt=""></a>
-        <ul class="navbar">
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        
-        <div class="icons">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="#"><i class="ri-user-line"></i></a>
-            <a href="#"><i class="ri-shopping-cart-line"></i></a>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
 
-    </header>
-
+    {% block title %}
+    {{product.name}}
+    {% endblock%}
+   
+{% block body %}
     <!-- home section design -->
     <section class="view_product">
         <div class="view_product_img"><img src={{product.image_url}} alt="Home Image"></div>
@@ -45,15 +17,4 @@
             <button type="button">Thêm vào giỏ hàng</button>
         </div>
     </section>
-
-    <!-- feature section design -->
-    <section>
-    
-    </section>
-    {% comment %} <img src="{% static 'interface/images/logo.png' %}"> {% endcomment %}
-    {% comment %} <img src="../images/logo.png"> {% endcomment %}
-    
-    <!-- custom js link -->
-    <script type="text/javascript" src="{% static 'interface/scripts.js'%}"></script>
-</body>
-</html>
+{% endblock %}

@@ -101,11 +101,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'interface.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LOGIN_URL = 'login'
 
 TIME_ZONE = 'UTC'
 
@@ -126,9 +129,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static/')
+#     os.path.join(BASE_DIR, 'static')
 # ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

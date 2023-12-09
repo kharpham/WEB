@@ -1,7 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 
 # Create your models here.
+class User(AbstractUser):
+    pass
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=9, decimal_places=0)
@@ -28,6 +30,8 @@ class Blog(models.Model):
     image_3 = models.ImageField(null=True, upload_to="images/", blank=True)
     modified_timestamp = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     description = models.CharField(max_length=500,null=True, blank=True)
+    meta_description =  models.CharField(max_length=200, null=True, blank=True)
+
 
     
     

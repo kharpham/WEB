@@ -1,46 +1,20 @@
+{% extends "interface/layout.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownish Clothing - Home</title>
-    <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- header section design -->
-    <header>
-        <a href="{% url 'index' %}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt=""></a>
-        <ul class="navbar">
-            <li><a href="{% url 'index' %}" class="active">Trang chủ</a></li>
-            <li><a href="#">Về chúng tôi</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="#">Liên hệ</a></li>
-        </ul>
-        
-        <div class="icons">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="#"><i class="ri-user-line"></i></a>
-            <a href="#"><i class="ri-shopping-cart-line"></i></a>
-            {% comment %} <div class="bx bx-menu" id="menu-icon"></div> {% endcomment %}
-        </div>
+{% block title %}
+    Brownish Clothing - Home
+{% endblock %}
 
-    </header>
-
+{% block body %}
     <!-- home section design -->
+    <div id="page-type" style="display:none">index</div>
     <section class="home-index">
-        <!-- <img class="slide" src="{% static 'interface/images/bg01.png' %}"> -->
-        <img class="slide" src="{%static 'interface/images/bg02.png' %}"> 
+        <img class="slide" src="{% static 'interface/images/bg01.png' %}">
+        <img class="slide" src="{% static 'interface/images/bg02.png' %}"> 
     </section>
 
+
     <!-- feature section design -->
-    <section class="feature">
+    {% comment %} <section class="feature">
         <div class="middle-text">
             <h2>Discover more <span>Good things.</span></h2>
         </div>
@@ -77,7 +51,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> {% endcomment %}
 
     <!-- product section design -->
     <section class="product">
@@ -97,8 +71,8 @@
                     <div>
                         <a href="#" class="price">{{product.price}}VND</a>
                     </div>
-                <div class="heart">
-                        <i class="ri-heart-line"></i>
+                    <div class="heart">
+                        <i class="ri-thumb-up-line"></i>
                     </div>
                 </div>
             </div>
@@ -106,7 +80,4 @@
             
         </div>
     </section>
-    <!-- custom js link -->
-    <script type="text/javascript" src="{% static 'interface/scripts.js'%}"></script>
-</body>
-</html>
+{% endblock  %}

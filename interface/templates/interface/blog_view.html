@@ -1,29 +1,29 @@
+{% extends 'interface/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Dưới 160 từ, tóm tắt nội dung trang, sử dụng từ khóa chính -->
-    <meta name="description" content={{blog.description}}>
-    <meta name="robots" content="index, follow">
-    <title>{{blog.title}} - Brownish Clothing</title>
-    <!--Đây là đường link gốc của chính website này.  -->
-    <link rel="canonical" href="https://brownish.store/block_view/...">
-    <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Brownish Clothing - Thời trang bền vững thân thiện môi trường">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content={{blog.title}}>
-    <meta property="og:description" content={{blog.description}}>
-    <meta property="og:url" content="https://brownish.store/block_view/...">
-    <meta property="article:published_time" content={{blog.timestamp}}>
-    <meta property="article:modified_time" content={{blog.modified_timestamp}}>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={{blog.title}}>
-    <meta name="twitter:description" content={{blog.description}}>
-    <meta name="author" content="Brownish">
-    <meta name="twitter:creator" content="@brownishvn">
-	<meta name="twitter:site" content="@brownishvn">
+
+
+    {% block title %}{{blog.title}} - Brownish Clothing {% endblock%}
+    {% block meta%}
+         <!-- Dưới 160 từ, tóm tắt nội dung trang, sử dụng từ khóa chính -->
+        <meta name="description" content={{blog.description}}>
+        <meta name="robots" content="index, follow">
+        <!--Đây là đường link gốc của chính website này.  -->
+        <link rel="canonical" href="https://brownish.store/block_view/...">
+        <meta property="og:locale" content="vi_VN">
+        <meta property="og:site_name" content="Brownish Clothing - Thời trang bền vững thân thiện môi trường">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content={{blog.title}}>
+        <meta property="og:description" content={{blog.description}}>
+        <meta property="og:url" content="https://brownish.store/block_view/...">
+        <meta property="article:published_time" content={{blog.timestamp}}>
+        <meta property="article:modified_time" content={{blog.modified_timestamp}}>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content={{blog.title}}>
+        <meta name="twitter:description" content={{blog.description}}>
+        <meta name="author" content="Brownish">
+        <meta name="twitter:creator" content="@brownishvn">
+        <meta name="twitter:site" content="@brownishvn">    
+    {% endblock %}
     <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -31,28 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- header section design -->
-    <header>
-        <a href="{% url 'index' %}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt=""></a>
-        <ul class="navbar">
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        
-        <div class="icons">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="#"><i class="ri-user-line"></i></a>
-            <a href="#"><i class="ri-shopping-cart-line"></i></a>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
-
-    </header>
-
+{% block body %}
     <!-- home section design -->
     <section class="home-index" style="height: 50vh;">
         <img src="{%static 'interface/images/bg02.png' %}"> 
@@ -75,8 +54,4 @@
     </section>
     {% comment %} <img src="{% static 'interface/images/logo.png' %}"> {% endcomment %}
     {% comment %} <img src="../images/logo.png"> {% endcomment %}
-    
-    <!-- custom js link -->
-    <script type="text/javascript" src="{% static 'interface/scripts.js'%}"></script>
-</body>
-</html>
+{% endblock %}
