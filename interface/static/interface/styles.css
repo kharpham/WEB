@@ -38,6 +38,11 @@ header {
     height: 100px;
 }
 
+ul { list-style-type: disc !important; }
+ul li {
+    list-style-type: disc !important;
+}
+
 .logo img {
     width: 100px;
     height: auto;

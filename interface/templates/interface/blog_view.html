@@ -69,11 +69,20 @@
     <section class="viewblog">
         <div class="viewblog-img"><img src="{{blog.image.url}}" alt="Home Image"></div>
         <div class="viewblog-info">
-            <h3>{{blog.title}}</h3>
+            <h1>{{blog.title}}</h1>
             <p class="viewblog-timestamp">{{blog.timestamp}}</p>
             <p class="viewblog-creator">By: {{blog.creator}}</p>
             <p class="viewblog-descripttion">{{blog.descirptiton}}</p>
-            <p class="viewblog-content">{{blog.content}}</p>            
+            <p class="viewblog-content">{{blog.content}}</p>    
+            <h2>{{blog.title1}}</h2>   
+            <p class="viewblog-content">{{blog.content1|safe}}</p>     
+            <div class="viewblog-img"><img src="{{blog.image_1.url}}" alt="Home Image"></div>
+            <h2>{{blog.title2}}</h2>   
+            <p class="viewblog-content">{{blog.content2|safe}}</p>   
+            <div class="viewblog-img"><img src="{{blog.image_2.url}}" alt="Home Image"></div>
+            <h2>{{blog.title3}}</h2>      
+            <p class="viewblog-content">{{blog.content3|safe}}</p>   
+            <div class="viewblog-img"><img src="{{blog.image_3.url}}" alt="Home Image"></div>
         </div>  
     </section>
 
