@@ -536,3 +536,12 @@ header.sticky {
     padding-top: 30px;
     text-align: justify;
 }
+
+form {
+    width: 60%;
+    max-width: 500px;
+    height: 300px;
+    margin: 200px auto 0;
+    background-color: burlywood;
+    color: white;
+}

@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 
 # Create your models here.
-class User(AbstractUser):
-    pass
+
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=9, decimal_places=0)
