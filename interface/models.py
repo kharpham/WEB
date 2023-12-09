@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 
 # Create your models here.
-
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=9, decimal_places=0)
@@ -11,6 +12,7 @@ class Product(models.Model):
     description = models.TextField()
     image_url = models.URLField()
     discount_price = models.DecimalField(max_digits=9, decimal_places=0, null=True, blank=True)
+    shoppers = models.ManyToManyField(User, blank=True, related_name="shopping_cart")
 
 class Blog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)

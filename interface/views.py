@@ -39,12 +39,23 @@ def blog_view(request, blog_id):
 
 @login_required
 def product_view(request, product_id):
-    try:
+    try: 
         product = Product.objects.get(pk=product_id)
     except Product.DoesNotExist:
         return HttpResponse("Page not found")
+    added = product.shoppers.filter(pk=request.user.pk).exists()
+    if request.method == "POST":
+        if added:
+            product.shoppers.remove(request.user)
+        else :
+            product.shoppers.add(request.user)
+        return render(request, "interface/product_view.html", {
+        "product": product,
+        "added": product.shoppers.filter(pk=request.user.pk).exists(),
+    })
     return render(request, "interface/product_view.html", {
         "product": product,
+        "added": added,
     })
 
 def about_us(request):
@@ -92,3 +103,9 @@ def register_view(request):
     else: 
         return render(request, "interface/register.html")
     
+@login_required
+def shopping_cart(request):
+    items = request.user.shopping_cart.all()
+    return render(request, "interface/shopping_cart.html", {
+        "items": items,
+    })

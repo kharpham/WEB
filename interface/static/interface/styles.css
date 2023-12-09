@@ -38,10 +38,10 @@ header {
     height: 100px;
 }
 
-ul { list-style-type: disc !important; }
+/* ul { list-style-type: disc !important; }
 ul li {
     list-style-type: disc !important;
-}
+} */
 
 .logo img {
     width: 100px;
@@ -128,7 +128,7 @@ section {
     gap: 1.5rem;
     display: grid;
     align-items:flex-end;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 
 .home-index img {
@@ -276,7 +276,7 @@ header.sticky {
 .product-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5%;
+    gap: 2%;
     align-items: center;
     margin-top: 5rem;
 }
@@ -341,7 +341,7 @@ header.sticky {
 
 .price {
     display: inline-block;
-    padding: 4px 15px;
+    padding: 0 15px;
     background: transparent;
     border: 2px solid #853f16;
     color: #853f16;
@@ -494,15 +494,36 @@ header.sticky {
     font-size: 20px;
     border-radius: 10px;
     font-weight: bold;
-    color: white;
-    background-color: green;
     position: absolute;
     bottom: 150px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: all 0.45s ease;
+    width: 200px;
+}
+#not-added:hover, #not-added:active {
+    background-color: green;
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
+#not-added {
+    color: rgb(239, 239, 239);
+    background-color: rgb(77, 197, 77);
+}
+#added {
+    color: rgb(239, 239, 239);
+    background-color: rgb(231, 78, 78);
+}
+
+#added:hover, #added:active {
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgb(171, 8, 8);
+}
 .view_product {
-    padding-top: 150px;
+    /* padding-top: 150px; */
     display: grid;
     grid-template-columns: 2fr 3fr;
     column-gap: 10%;
@@ -542,11 +563,11 @@ header.sticky {
     text-align: justify;
 }
 
-form {
+.credential form {
     width: 60%;
     max-width: 500px;
     height: 400px;
-    margin: 150px auto 0;
+    margin: 30px auto ;
     background-color: burlywood;
     color: rgb(240, 91, 72);
     border-radius: 15px;
@@ -578,15 +599,15 @@ form {
     outline: none;
 
 }
-form h3 {
+.credential form h3 {
     text-align: center;
     font-size: 30px;
     margin-bottom: 30px;
 }
-form input {
+.credential form input {
     background-color: transparent;
 }
-form input[type="submit"] {
+#form-background input[type="submit"] {
     margin-top: 20px;
     display: inline-block;
     width: 80px;
@@ -599,18 +620,70 @@ form input[type="submit"] {
     transition: all .45s ease;
 }
 
-form input[type="submit"]:hover, form input[type="submit"]:active {
+#form-background input[type="submit"]:hover, form input[type="submit"]:active {
     background-color: rgb(214, 213, 211);
     color: orangered;
     cursor: pointer;
 }
-form span {
+.credential form span {
     color: black;
     background: transparent;
     font-size: 18px;
     font-weight: 500;
     color:rgb(191, 80, 0);
 }
-form span a {
+.credential form span a {
     color: blue;
 }
+ul {
+    list-style: none;
+}
+body {
+    padding-top: 100px;
+}
+
+.cart_item {
+    position: static;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 40%;
+    height: 250px; 
+    border-radius: 20px;
+    border: 3px dashed rgb(103, 71, 71);
+    padding: 20px 20px 50px;
+    margin-bottom: 30px;
+}
+.cart_item_image {
+    height: 200px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cart_item img {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+.cart_item_info {
+    overflow: hidden;
+    
+}
+.cart_item_info a {
+    color: rgb(202, 171, 176);
+    font-size: 20px;
+    display: block;
+    height: 100px;
+    overflow-y:hidden;
+}
+.cart_item_info a:hover, .cart_item_info a:active {
+    color: rgb(198, 140, 149);
+}
+.cart_item_info p {
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+}
+

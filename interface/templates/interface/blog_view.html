@@ -1,6 +1,5 @@
 {% extends 'interface/layout.html' %}
 {% load static %}
-<<<<<<< HEAD
 
 
     {% block title %}{{blog.title}} - Brownish Clothing {% endblock%}
@@ -25,33 +24,6 @@
         <meta name="twitter:creator" content="@brownishvn">
         <meta name="twitter:site" content="@brownishvn">    
     {% endblock %}
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Dưới 160 từ, tóm tắt nội dung trang, sử dụng từ khóa chính -->
-    <meta name="description" content="{{blog.description}}">
-    <meta name="robots" content="index, follow">
-    <title>{{blog.title}} - Brownish Clothing</title>
-    <!--Đây là đường link gốc của chính website này.  -->
-    <link rel="canonical" href="{{ request.build_absolute_uri }}">
-    <meta property="og:locale" content="vi_VN">
-    <meta property="og:site_name" content="Brownish Clothing - Thời trang bền vững thân thiện môi trường">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{blog.title}} - Brownish Clothing">
-    <meta property="og:description" content="{{blog.description}}">
-    <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="article:published_time" content="{% if blog.timestamp %}{{ blog.timestamp|date:"c" }}{% endif %}">
-    <meta property="article:modified_time" content="{% if blog.modified_timestamp %}{{ blog.modified_timestamp|date:"c" }}{% endif %}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{blog.title}} - Brownish Clothing">
-    <meta name="twitter:description" content="{{blog.description}}">
-    <meta name="author" content="Brownish">
-    <meta name="twitter:creator" content="@brownishvn">
-	<meta name="twitter:site" content="@brownishvn">
->>>>>>> 5040e74c51135d8358b21dfcb4fe54aa5a1f3f5c
     <link rel="stylesheet" href="{% static 'interface/styles.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -59,40 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Poppins:wght@500;900&display=swap" rel="stylesheet">
 </head>
-<<<<<<< HEAD
 {% block body %}
-=======
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPH3VWS6YT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VPH3VWS6YT');
-</script>
-<body>
-    <!-- header section design -->
-    <header>
-        <a href="{% url 'index' %}"><img src="{% static 'interface/images/logo.png' %}" class="logo" alt=""></a>
-        <ul class="navbar">
-            <li><a href="{% url 'index' %}">Trang chủ</a></li>
-            <li><a href="#">Về chúng tôi</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
-            <li><a href="#">Liên hệ</a></li>
-        </ul>
-        
-        <div class="icons">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="#"><i class="ri-user-line"></i></a>
-            <a href="#"><i class="ri-shopping-cart-line"></i></a>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
-
-    </header>
-
->>>>>>> 5040e74c51135d8358b21dfcb4fe54aa5a1f3f5c
     <!-- home section design -->
     <section class="home-index" style="height: 50vh;">
         <img src="{%static 'interface/images/bg02.png' %}"> 
@@ -107,14 +46,20 @@
             <p class="viewblog-descripttion">{{blog.descirptiton}}</p>
             <p class="viewblog-content">{{blog.content}}</p>    
             <h2>{{blog.title1}}</h2>   
-            <p class="viewblog-content">{{blog.content1|safe}}</p>     
-            <div class="viewblog-img"><img src="{{blog.image_1.url}}" alt="Home Image"></div>
+            <p class="viewblog-content">{{blog.content1|safe}}</p>
+            {% if blog.image_1_url %}     
+            <div class="viewblog-img"><img src="{{blog.image_1.url|default:''}}" alt="Home Image"></div>
+            {% endif %}
             <h2>{{blog.title2}}</h2>   
             <p class="viewblog-content">{{blog.content2|safe}}</p>   
-            <div class="viewblog-img"><img src="{{blog.image_2.url}}" alt="Home Image"></div>
+            {% if blog.image_2_url %}
+            <div class="viewblog-img"><img src="{{blog.image_2.url|default:''}}" alt="Home Image"></div>
+            {% endif %}
             <h2>{{blog.title3}}</h2>      
             <p class="viewblog-content">{{blog.content3|safe}}</p>   
-            <div class="viewblog-img"><img src="{{blog.image_3.url}}" alt="Home Image"></div>
+            {% if blog.image_3_url %}
+            <div class="viewblog-img"><img src="{{blog.image_3.url|default:''}}" alt="Home Image"></div>
+            {% endif %}
         </div>  
     </section>
 
