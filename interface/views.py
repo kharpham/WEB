@@ -75,7 +75,7 @@ def login_view(request):
             return HttpResponseRedirect(reverse("index"))
         else:
             return render(request, "interface/login.html", {
-                "response": "Oops! Invalid username/password."
+                "response": "Thông tin đăng nhập tài khoản sai! Vui lòng thử lại"
             })
     else: 
         return render(request, "interface/login.html")
@@ -94,13 +94,13 @@ def register_view(request):
         confirmation = request.POST["confirmation"]
         if (password != confirmation):
             return render(request, "interface/register.html", {
-                "response": "Confirmation must match password",
+                "response": "Xác nhận mật khẩu và mật khẩu phải giống nhau",
             })
         try: 
             user = User.objects.create_user(username, email, password)
         except IntegrityError:
             return render(request, "interface/register.html", {
-                "response": "Username/Email already taken",
+                "response": "Tên đăng nhập/Email đã có người sử dụng",
             })
         login(request, user)
         return HttpResponseRedirect(reverse("index"))

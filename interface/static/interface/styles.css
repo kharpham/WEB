@@ -769,6 +769,7 @@ body {
     color: red;
 }
 .paginator {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
