@@ -8,6 +8,9 @@
             <div id="form-background">
             {% csrf_token %}
             <h3>Đăng Nhập</h3>
+            {% if response %}
+                {{response}}
+            {% endif %}
         <div class="form-group">
             <input autofocus class="form-control" type="text" name="username" placeholder="Tên đăng nhập">
         </div>
@@ -17,7 +20,8 @@
         <input class="btn btn-primary" type="submit" value="Đăng nhập">
         <span>Chưa có tài khoản?<a href="{% url 'register' %}">Đăng ký tại đây</a></span>
         </div>    
+    </form>
     </section>
-</form>
+
     
 {% endblock %}

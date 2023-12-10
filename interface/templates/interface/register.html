@@ -3,25 +3,30 @@
 
 {% block title %}Đăng ký thành viên - Brownish Clothing{% endblock %}
 {% block body %}
-    <form action="{% url 'register' %}" method="POST">
-    <div id="form-background">
-            {% csrf_token %}
-            <h3>Đăng Ký</h3>
-        <div class="form-group">
-            <input autofocus class="form-control" type="text" name="username" placeholder="Tên đăng nhập">
-        </div>
-        <div class="form-group">
-            <input autofocus class="form-control" type="email" name="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Mật khẩu">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="password" name="confirmation" placeholder="Xác nhận mật khẩu">
-        </div>
-        <input class="btn btn-primary" type="submit" value="Đăng ký">
-        <span>Đã có tài khoản?<a href="{% url 'login' %}">Đăng nhập tại đây</a></span>
-    </div>    
-</form>
+    <section class="credential">
+        <form action="{% url 'register' %}" method="POST">
+            <div id="form-background">
+                {% csrf_token %}
+                <h3>Đăng Ký</h3>
+                {% if response %}
+                    {{response}}
+                {% endif %}
+                <div class="form-group">
+                    <input autofocus class="form-control" type="text" name="username" placeholder="Tên đăng nhập">
+                </div>
+                <div class="form-group">
+                    <input autofocus class="form-control" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="Mật khẩu">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="confirmation" placeholder="Xác nhận mật khẩu">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Đăng ký">
+                <span>Đã có tài khoản?<a href="{% url 'login' %}">Đăng nhập tại đây</a></span>
+            </div>    
+        </form>
+    </section>
     
 {% endblock %}
