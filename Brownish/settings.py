@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-p7yujc=b!ly-zgqc$kv2rg2jf(53#8)vb2_s=bl1q04oqh$qd3
 DEBUG = True
 
 ALLOWED_HOSTS = ['brownish-clothing-store.azurewebsites.net', 'brownish.store', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://brownish.store','https://127.0.0.1']
 
 
 # Application definition
@@ -45,6 +46,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware', 
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

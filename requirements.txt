@@ -2,3 +2,4 @@ django
 django-crispy-forms
 whitenoise
 pytz
+django-cors-headers
