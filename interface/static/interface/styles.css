@@ -454,6 +454,11 @@ header.sticky {
 
 }
 
+.center {
+    display: block;
+    margin: 0 auto;
+  }
+
 /* .viewblog {
     height: max-content;
     width: auto;
