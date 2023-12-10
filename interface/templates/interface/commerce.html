@@ -8,8 +8,22 @@
     <!-- home section design -->
     <div id="page-type" style="display:none">index</div>
     <section class="home-index">
-        <img class="slide" src="{% static 'interface/images/bg01.png' %}">
-        <img class="slide" src="{% static 'interface/images/bg02.png' %}"> 
+        <div class="slide-list">
+            <div class="slide">
+                <img src="{% static 'interface/images/bg01.png' %}">
+            </div>
+            <div class="slide">
+                <img src="{% static 'interface/images/bg02.png' %}"> 
+            </div>
+        </div>
+        <div class="slide-buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="dot-active"></li>
+            <li></li>
+        </ul>
     </section>
 
 
@@ -65,19 +79,31 @@
                 <div class="box-img">
                     <a style="height: 100%; width: 100%;" href="{% url 'product_view' product.pk %}"><img src="{{product.image_url}}" alt=""></a>
                 </div>
-                <a href="{% url 'product_view' product.pk %}"><h3>{{product.name}}</h3></a>
-                <h4>{{product.description}}</h4>
-                <div class="inbox">
-                    <div>
-                        <a href="{% url 'product_view' product.pk %}" class="price">{{product.price}}VND</a>
-                    </div>
-                    <div class="heart">
-                        <i class="ri-thumb-up-line"></i>
+                <div class="box-content">
+                    <a href="{% url 'product_view' product.pk %}" class="product_name"><h3>{{product.name}}</h3></a>
+                    <h4>{{product.description}}</h4>
+                    <div class="inbox">
+                        <div>
+                            <a href="{% url 'product_view' product.pk %}" class="price">{{product.price}}VND</a>
+                        </div>
+                        <div class="heart">
+                            <i class="ri-thumb-up-line"></i>
+                        </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
-            
         </div>
+    </section>
+    <section class="paginator">
+        {% if products.has_previous %}
+            <a href="?page=1">&laquo; Trang đầu</a>
+            <a href="?page={{products.previous_page_number}}">{{products.previous_page_number}}</a>
+        {% endif %}
+        <span class="current_page">{{products.number}}</span>
+        {% if products.has_next %}
+            <a href="?page={{products.next_page_number}}">{{products.next_page_number}}</a>
+            <a href="?page={{products.paginator.num_pages}}">Trang cuối &raquo;</a>
+        {% endif %}
     </section>
 {% endblock  %}

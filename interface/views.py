@@ -6,11 +6,15 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
-
+from django.core.paginator import Paginator
 from .models import *
+
+
 # Create your views here.
 def index(request):
-    products = Product.objects.all()
+    p = Paginator(Product.objects.all(), 9)
+    page = request.GET.get('page')
+    products = p.get_page(page)
     now = datetime.now(timezone('Asia/Ho_Chi_Minh'))
     target_datetime = datetime(2023, 12, 5, 20, 0, 0, tzinfo=timezone('Asia/Ho_Chi_Minh'))
     if target_datetime > now:
