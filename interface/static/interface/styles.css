@@ -172,6 +172,9 @@ section:not(.home-index) {
     font-family: monospace;
     font-weight: bold;
 }
+.slide-buttons button:hover, .slide-buttons button:active {
+    cursor: pointer;
+}
 
 .dots {
     position: absolute;
@@ -194,10 +197,13 @@ section:not(.home-index) {
     border-radius: 20px;
     transition: 1s all ease;
 }
+
 .dots li[class="dot-active"] {
     background-color:rgb(200, 133, 131);
 }
-
+.dots li:not(.dot-active):hover {
+    cursor: pointer;
+}
 .home-text {
     background-color: springgreen;
     border-radius: 10px;
