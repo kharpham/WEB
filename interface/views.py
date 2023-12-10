@@ -12,7 +12,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    p = Paginator(Product.objects.all(), 9)
+    p = Paginator(Product.objects.all(), 6)
     page = request.GET.get('page')
     products = p.get_page(page)
     now = datetime.now(timezone('Asia/Ho_Chi_Minh'))
