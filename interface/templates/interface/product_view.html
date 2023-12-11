@@ -22,7 +22,11 @@
         <div class="view_product_img"><img src={{product.image_url}} alt="Home Image"></div>
         <div class="view_product_info">
             <h4>{{product.name}}</h4>
-            <h3>{{product.price}}VND</h3>
+            <h3>{{product.price}}VND
+                {% if product.discount_price %}
+                    <span id="product_original">{{product.discount_price}}VNĐ</span>
+                {% endif %}
+            </h3>
             <span>{{product.category}}</span>/<span>{{product.subcategory}}</span>
             <p>{{product.description}}</p>
             <form action="{% url 'product_view' product.id %}" method="POST">

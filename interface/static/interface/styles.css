@@ -838,6 +838,13 @@ body {
     margin-top: 20px;
     margin-left: 20px;
 }
+
+.view_product_info h3 span[id="product_original"] {
+    color: rgb(251, 55, 29);
+    text-decoration: line-through;
+    font-size: 20px;
+    text-decoration-thickness: 0.5px;
+}
 @media only screen and (max-width: 1000px) {
     #empty {
         margin-top: 50px;
@@ -931,6 +938,15 @@ body {
         padding: 0;
         padding: 0 5% 30px;
     }
+  }
+
+  #original {
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2px;
+    color: rgb(222, 40, 40);
+    font-weight: 600;
+    font-size: 16px;
+
   }
 
   @media only screen and (max-width: 700px) {

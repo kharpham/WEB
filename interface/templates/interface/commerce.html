@@ -101,10 +101,12 @@
                     <h4>{{product.description}}</h4>
                     <div class="inbox">
                         <div>
-                            <a href="{% url 'product_view' product.pk %}" class="price">{{product.price}}VND</a>
+                            <a href="{% url 'product_view' product.pk %}" class="price">{{product.price}}VNĐ</a>
                         </div>
-                        <div class="heart">
-                            <i class="ri-thumb-up-line"></i>
+                        <div class="original_price">
+                            {% if product.discount_price %}
+                                <span id="original">{{product.discount_price}}VNĐ</span>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
