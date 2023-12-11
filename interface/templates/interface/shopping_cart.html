@@ -6,8 +6,7 @@
 {% block body %}
     <div id="page-type" style="display:none"></div>
     {% if not items %}
-    
-    <h2>Giỏ hàng hiện tại của bạn đang trống</h2>
+        <h2 id="empty">Giỏ hàng hiện tại của bạn đang trống</h2>
     {% else %}
     <section id="shopping_cart_section">
     {% for item in items %}

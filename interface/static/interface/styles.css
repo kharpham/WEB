@@ -834,7 +834,14 @@ body {
     font-size: 25px;    
     color: rgb(255, 54, 54);
 }
+#empty {
+    margin-top: 20px;
+    margin-left: 20px;
+}
 @media only screen and (max-width: 1000px) {
+    #empty {
+        margin-top: 50px;
+    }
     .cart_item {
         height: 200px;
     }

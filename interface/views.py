@@ -24,7 +24,7 @@ def index(request):
             "products": products,
         })
 def blog(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.all().order_by('-timestamp')
     return render(request, "interface/blog.html", {
       "blogs": blogs,
     })
