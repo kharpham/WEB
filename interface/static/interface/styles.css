@@ -603,10 +603,12 @@ header.sticky {
     right: 50%;
     transform: translateX(50%);
 }
-#not-added:hover, #not-added:active {
+button#not-added:hover, button#not-added:active {
     background-color: green;
     color: white;
     transform: scale(1.05);
+    right: 50%;
+    transform: translateX(50%);
     cursor: pointer;
 }
 
@@ -614,16 +616,18 @@ header.sticky {
     color: rgb(239, 239, 239);
     background-color: rgb(77, 197, 77);
 }
-#added {
+button#added {
     color: rgb(239, 239, 239);
     background-color: rgb(231, 78, 78);
 }
 
-#added:hover, #added:active {
+button#added:hover, button#added:active {
     color: white;
     transform: scale(1.05);
     cursor: pointer;
     background-color: rgb(171, 8, 8);
+    right: 50%;
+    transform: translateX(50%);
 }
 .view_product {
     /* padding-top: 150px; */
@@ -787,7 +791,7 @@ body {
 .cart_item_info p {
     font-size: 25px;
     font-weight: 600;
-    color: red;
+    color: rgb(255, 54, 54);
 }
 .paginator {
     margin-top: 20px;
@@ -818,6 +822,18 @@ body {
     font-weight: 500;
 }
 
+.about-us-information h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+#sum_price h3 {
+    text-align: right;
+}
+
+#sum_price h3 span {
+    font-size: 25px;    
+    color: rgb(255, 54, 54);
+}
 @media only screen and (max-width: 1000px) {
     .cart_item {
         height: 200px;

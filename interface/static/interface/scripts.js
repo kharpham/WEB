@@ -21,6 +21,8 @@ let next = document.getElementById('next');
 let activeSlide = 0;
 let lengthItems = items.length;
 
+
+if (next !== null && prev !== null && dots !== null) {
 next.onclick = function() {
     if (activeSlide + 1 >= lengthItems) {
         activeSlide = 0;
@@ -64,4 +66,12 @@ dots.forEach((dot, key) => {
         reloadSlider();
     })
 })
+}
 
+let total_price = 0;
+let cart_items = document.querySelectorAll(".item_price");
+cart_items.forEach(cart_item  => {
+    total_price += parseFloat(cart_item.textContent);
+});
+let sum_price = document.querySelector("#total_price");
+sum_price.innerHTML = total_price.toLocaleString('en-US');
