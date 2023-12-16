@@ -13,6 +13,13 @@ class Product(models.Model):
     image_url = models.URLField()
     discount_price = models.DecimalField(max_digits=9, decimal_places=0, null=True, blank=True)
     shoppers = models.ManyToManyField(User, blank=True, related_name="shopping_cart")
+    likes = models.ManyToManyField(User, related_name="liked_products")
+    def serialize(self):
+        return {
+            "id": self.pk,
+            "likes": [liker.username for liker in self.likes.all()],
+            "number_likes": self.likes.count(),
+        }
 
 class Blog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)

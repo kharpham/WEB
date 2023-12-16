@@ -2,11 +2,13 @@ from django.shortcuts import render
 from datetime import datetime, timedelta
 from pytz import timezone
 from django.db import IntegrityError
-from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.http import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.core.paginator import Paginator
+from django.views.decorators.csrf import csrf_exempt
+import json
 from .models import *
 
 
@@ -113,3 +115,33 @@ def shopping_cart(request):
     return render(request, "interface/shopping_cart.html", {
         "items": items,
     })
+
+
+@csrf_exempt
+@login_required
+def product_info(request, product_id):
+    try:
+        product = Product.objects.get(pk=product_id)
+    except Product.DoesNotExist:
+        return Http404("Page not found")
+    if request.method == "PUT":
+        data = json.loads(request.body)
+        likes = data.get("likes")
+        # User already likes product
+        if request.user.username in likes:
+            try:
+                product.likes.add(request.user)
+            except IntegrityError:
+                return JsonResponse({
+                    "error": "User already likes the product {product_id}",
+                })
+            return HttpResponse(status=204)
+        else:
+            try: 
+                product.likes.remove(request.user)
+            except IntegrityError:
+                return JsonResponse({
+                    "error": "User already unlikes the product {product_id} "
+                })
+            return HttpResponse(status=204)
+    return JsonResponse(product.serialize(), safe=False)

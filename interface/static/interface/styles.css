@@ -845,6 +845,59 @@ body {
     font-size: 20px;
     text-decoration-thickness: 0.5px;
 }
+button.like-btn, button.unlike-btn, button.like-btn2 {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+button:hover, button:active {
+    cursor: pointer;
+}
+button.unlike-btn {
+    color: grey;
+}
+button.like-btn {
+    color: rgb(121, 78, 78);
+    animation-name: grow;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+button.like-btn2 {
+    color: rgb(121, 78, 78);
+}
+@keyframes grow {
+    0% {
+        transform: scale(1);
+        color: grey;
+    }
+
+    75% {
+        transform: scale(1.2);
+        color: rgb(121, 78, 78)
+    }
+
+    100% {
+        transform: scale(1);
+        color: rgb(121, 78, 78)
+    }
+}
+.product-likes {
+    position: relative;
+    left:  -20px;
+}
+
+
+#original {
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2px;
+    color: rgb(222, 40, 40);
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    right: 20px;
+
+  }
 @media only screen and (max-width: 1000px) {
     #empty {
         margin-top: 50px;
@@ -940,14 +993,6 @@ body {
     }
   }
 
-  #original {
-    text-decoration: line-through;
-    text-decoration-thickness: 0.2px;
-    color: rgb(222, 40, 40);
-    font-weight: 600;
-    font-size: 16px;
-
-  }
 
   @media only screen and (max-width: 700px) {
     .cart_item {
