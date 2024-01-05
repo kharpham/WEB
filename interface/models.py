@@ -12,8 +12,8 @@ class Product(models.Model):
     description = models.TextField()
     image_url = models.URLField()
     discount_price = models.DecimalField(max_digits=9, decimal_places=0, null=True, blank=True)
-    shoppers = models.ManyToManyField(User, blank=True, related_name="shopping_cart")
-    likes = models.ManyToManyField(User, related_name="liked_products")
+    shoppers = models.ManyToManyField(User, blank=True, null=True, related_name="shopping_cart")
+    likes = models.ManyToManyField(User, blank=True, null=True, related_name="liked_products")
     def serialize(self):
         return {
             "id": self.pk,
