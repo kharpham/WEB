@@ -682,7 +682,7 @@ button#added:hover, button#added:active {
     background-image: url("/static/interface/images/bg01.png");
     background-size: cover; 
 }
-#form-background {
+.form-background {
     width: 100%;
     backdrop-filter: blur(1px);
     height: 100%;
