@@ -98,8 +98,8 @@ python-dotenv==0.19.2
 python-slugify==8.0.1
 pytz==2023.3.post1
 pytzdata==2020.1
-# pywin32==306
-pywin32>=300,<307
+pywin32==306
+python_version==3.9
 PyYAML==5.4.1
 readchar==4.0.5
 referencing==0.30.2
