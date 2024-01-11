@@ -79,7 +79,6 @@ pexpect==4.8.0
 Pillow==10.0.0
 platformdirs==4.1.0
 prefect==2.14.2
-# psycopg2==2.9.9
 psycopg2-binary==2.9.9
 ptyprocess==0.7.0
 pyasn1==0.5.0
@@ -99,7 +98,6 @@ python-slugify==8.0.1
 pytz==2023.3.post1
 pytzdata==2020.1
 pywin32==306
-python_version==3.9
 PyYAML==5.4.1
 readchar==4.0.5
 referencing==0.30.2
