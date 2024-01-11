@@ -586,6 +586,11 @@ header.sticky {
     box-sizing: border-box;
     position: relative;
 }
+.view_product_info p {
+    padding-top: 30px;
+    height: 200px;
+    overflow: scroll;
+}
 .view_product_info h3 {
     font-size: 30px;
 }
@@ -596,7 +601,7 @@ header.sticky {
     border-radius: 10px;
     font-weight: bold;
     position: absolute;
-    bottom: 150px;
+    bottom: 50px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition: all 0.45s ease;
     width: 200px;
