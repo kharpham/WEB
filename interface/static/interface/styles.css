@@ -871,6 +871,7 @@ button.like-btn {
 button.like-btn2 {
     color: rgb(121, 78, 78);
 }
+
 @keyframes grow {
     0% {
         transform: scale(1);
@@ -903,6 +904,7 @@ button.like-btn2 {
     right: 20px;
 
   }
+
 @media only screen and (max-width: 1000px) {
     #empty {
         margin-top: 50px;

@@ -4,10 +4,15 @@ from django.contrib.auth.models import User, AbstractUser
 # Create your models here.
 # class Profile(models.Model):
 #     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+
+class Category(models.Model):
+    category = models.CharField(max_length=64)
+    def __str__(self):
+        return f"{self.category}"
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=9, decimal_places=0)
-    category = models.CharField(max_length=64)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     subcategory = models.CharField(max_length=64)
     description = models.TextField()
     image_url = models.URLField()
