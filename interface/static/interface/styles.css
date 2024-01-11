@@ -983,10 +983,10 @@ button.like-btn2 {
     }
     #header-logo {
         display: inline-block;
-        width: 100vw;
+        width: 30vw;
     }
     #header-logo img {
-        width: 200px;
+        width: 30px;
         height: auto;
     }
     header {
