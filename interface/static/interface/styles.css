@@ -686,7 +686,7 @@ button#added:hover, button#added:active {
     background: linear-gradient(rgb(80, 80, 255), rgb(90, 101, 220));
     background-size: cover; 
 }
-#form-background {
+.form-background {
     width: 100%;
     backdrop-filter: blur(1px);
     height: 100%;
