@@ -680,11 +680,10 @@ button#added:hover, button#added:active {
     max-width: 500px;
     height: 400px;
     margin: 30px auto ;
-    background-color: burlywood;
-    color: rgb(240, 91, 72);
+    color: rgb(255, 255, 255);
     border-radius: 15px;
     padding: 20px 40px;
-    background-image: url("/static/interface/images/bg01.png");
+    background: linear-gradient(rgb(80, 80, 255), rgb(90, 101, 220));
     background-size: cover; 
 }
 .form-background {
@@ -701,7 +700,7 @@ button#added:hover, button#added:active {
     height: 2.2rem;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1.5px outset rgb(255, 141, 100);
+    border: 1.5px outset rgb(30, 176, 244);
     font-size: 1.1rem;
     font-weight: 600;
     transition: all .45s ease;
@@ -722,11 +721,11 @@ button#added:hover, button#added:active {
 #form-background input[type="submit"] {
     margin-top: 20px;
     display: inline-block;
-    width: 80px;
+    width: 100px;
     height: 40px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(215, 98, 56);
+    background-color: rgb(47, 47, 250);
     color: white;
     font-weight: bold;
     transition: all .45s ease;
@@ -740,9 +739,9 @@ button#added:hover, button#added:active {
 .credential form span {
     color: black;
     background: transparent;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    color:rgb(191, 80, 0);
+    color:rgb(253, 200, 162);
 }
 .credential form span a {
     color: blue;
@@ -981,14 +980,14 @@ button.like-btn2 {
     .paginator {
         margin-top: 100px;
     }
-    #header-logo {
+    /* #header-logo {
         display: inline-block;
         width: 30vw;
     }
     #header-logo img {
         width: 30px;
         height: auto;
-    }
+    } */
     header {
         height: 150px;
         padding-bottom: 20px;
