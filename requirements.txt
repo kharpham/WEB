@@ -104,7 +104,7 @@ python-slugify==8.0.1
 pytz==2023.3.post1
 pytzdata==2020.1
 # pywin32==306
-pypiwin32==223
+pypiwin32<=223
 # PyYAML==5.3.1
 readchar==4.0.5
 referencing==0.30.2
