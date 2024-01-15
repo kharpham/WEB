@@ -11,7 +11,7 @@ asgiref==3.7.2
 astroid==2.11.7
 asyncpg==0.28.0
 attrs==23.1.0
-awscli==1.22.101
+# awscli==1.22.101
 boto3==1.21.46
 botocore==1.24.46
 cachetools==5.3.2
@@ -56,7 +56,7 @@ jsonpatch==1.33
 jsonpointer==2.4
 jsonschema==4.19.1
 jsonschema-specifications==2023.7.1
-kubernetes==28.1.0
+# kubernetes==28.1.0
 lazy-object-proxy==1.10.0
 lib50==3.0.7
 Mako==1.2.4
@@ -105,7 +105,7 @@ pytz==2023.3.post1
 pytzdata==2020.1
 # pywin32==306
 pypiwin32>=223
-PyYAML==5.3.1
+# PyYAML==5.3.1
 readchar==4.0.5
 referencing==0.30.2
 regex==2023.10.3
